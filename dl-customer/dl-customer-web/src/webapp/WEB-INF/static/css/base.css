@@ -1,0 +1,206 @@
+/*basic style! */
+*{ margin: 0px; padding: 0px; font-family: '微软雅黑';}
+body,html{ margin: 0px; padding: 0px;}
+img{ border: 0px;}
+ul li,ol{ list-style-type: none;}
+a{ text-decoration: none; outline: none;}
+
+a{transition: background 1s; -moz-transition: background 1s; -webkit-transition: background 1s; -o-transition: background 1s;}
+.clear{ clear: both;}
+
+.divBorderRadius-1{border-radius:1px;-moz-border-radius: 1px; -webkit-border-radius: 1px;}
+.divBorderRadius-2{border-radius:2px;-moz-border-radius: 2px; -webkit-border-radius: 2px;}
+.divBorderRadius-4{border-radius:4px;-moz-border-radius: 4px; -webkit-border-radius: 4px;}
+.divBorderRadius-6{border-radius:6px;-moz-border-radius: 6px; -webkit-border-radius: 6px;}
+.divBorderRadius-10{border-radius:10px;-moz-border-radius: 10px; -webkit-border-radius: 10px;}
+.divShadow{box-shadow:0 5px 3px -3px #D3D3D3;-webkit-box-shadow:0 5px 3px -3px #D3D3D3;-moz-box-shadow:0 5px 3px -3px #D3D3D3;}
+.divShadow1{box-shadow:0 3px 2px -2px #D3D3D3;-webkit-box-shadow:0 3px 2px -2px #D3D3D3;-moz-box-shadow:0 3px 2px -2px #D3D3D3;}
+.divShadow2{box-shadow:0 2px 1px -1px #D3D3D3;-webkit-box-shadow:0 2px 1px -1px #D3D3D3;-moz-box-shadow:0 2px 1px -1px #D3D3D3;}
+
+body{ background: #E7E8EB;}
+
+/*index.html*/
+.divW{ width: 1200px; margin: auto; background: #fff;}
+#header{ width: 100%; height: 55px; border-top: 2px solid #32CC66; background: #fff;}
+.logo{ float: left;}
+.logo a img{ height: 55px;}
+.user-logout{ float: right; font-size: 14px;}
+.user{ float: left;}
+.user img{ float: left; margin-top: 14px; margin-right: 10px;}
+.user a{ float: left; line-height: 55px; color: #444;}
+.user a:hover{ color: #32CC66;}
+.logout{ float: left; line-height: 55px; margin-left: 10px;}
+.logout span{ color: #999;}
+.logout a{ text-decoration: underline; color: #444; margin-left: 10px;}
+
+.container{ min-height: 800px; margin-top: 40px; border: 1px solid #ddd; overflow: hidden;}
+.con-left{ min-height: 800px; float: left; width: 200px; border-right: 1px solid #ddd;}
+.con-left dl{ padding: 20px; width: 160px; border-bottom: 1px solid #ddd;}
+.con-left dl dt{ color: #868686; margin-bottom: 10px; padding-left: 25px; width: 135px;}
+.con-left dl dd{ line-height: 25px; margin-left: 25px;}
+.con-left dl dd a{ color: #444; font-size: 14px;}
+.con-left dl dd a:hover{ color: #32CC66; text-decoration: underline;}
+
+.con-right{ width: 960px; padding: 20px 19px; float: right;}
+.con-right-bar{ background: #ccc; width: 100%; height: 103px; line-height: 103px; background: #52A2DB; color: #fff; font-size: 20px; text-align: center;}
+.con-right-bar p{ font-family: "Comic Sans MS", cursive;}
+.con-right-notice{ border: 1px solid #ECECEC; overflow: hidden; margin-top: 20px; padding-bottom: 20px;}
+.con-right-notice h4{ width: 99%; padding: 10px 0px; padding-left: 1%;border-bottom: 1px solid #ECECEC; background: #F7F7FB;}
+.con-right-notice ul li{ width: 98%; padding: 0 1%; float: left; line-height: 30px; margin-top: 10px; border-bottom: 1px dashed #ECECEC; font-size: 14px;}
+.con-right-notice ul li a{ float: left; color: #444;}
+.con-right-notice ul li a:hover{ color: #32CC66;}
+.con-right-notice ul li span{ float: right; color: #555;}
+.footer{ text-align: center; font-size: 14px; height: 60px; line-height: 60px; margin-top: 30px; background: none; color:#585858;}
+
+.con-right-activity-list{ width: 100%; margin-top: 20px; font-size: 14px;}
+.con-right-activity-list table{ table-layout: fixed; width: 100%; text-align: center; border: 1px solid #E5E5E5; padding-bottom: 20px;}
+.con-right-activity-list table tr{ line-height: 22px; background: #FAFAFA;}
+.con-right-activity-list table tr td{ color: #444; height: 50px;}
+.con-right-activity-list table tr.activity-list-title{ background: #E8E8EA; height: 40px; border-bottom: 1px solid #E5E5E5;}
+.con-right-activity-list table tr.activity-list-title td{ color: #000; font-weight: bold;background-color: #CCC0CE}
+.con-right-activity-list table tr td a{ color: #3B90CB; text-decoration: underline;}
+.con-right-activity-list table tr td a:hover{}
+.con-right-activity-list table tr td img{ width: 90%;}
+
+.activity-list-page{ overflow: hidden; margin: auto;margin-top: 20px; width: 340px;}
+.activity-list-page ul li{ float: left; margin-right: 8px; text-align: center;}
+.activity-list-page ul li a{ color: #000;}
+.activity-list-page ul li a:hover{ text-decoration: underline;}
+.activity-list-page ul li a span{ font-family: "Comic Sans MS", cursive;}
+.activity-list-page ul li input{ width: 30px;}
+
+/*account.html*/
+.con-right-account{ font-size: 14px;}
+.con-right-account-title{ border-bottom: 1px solid #ECECEC; padding-bottom: 20px;}
+.con-right-account-form{ width: 100%; margin-top: 20px;}
+.con-right-account-form-text{ width: 95%; float: left;}
+.account-input{ width: 100%; margin-bottom: 20px; float: left;}
+.account-input label{ width: 25%; text-align: center;display: block; float: left; line-height: 30px;}
+.account-input label span{ color: #F00;}
+.account-input label b{ color: red;}
+.account-input input,select,textarea{ width: 70%; float: right; border: 1px solid #ccc; height: 30px; line-height: 30px; text-indent: 10px;}
+.account-input textarea{ min-height: 100px; line-height: 20px;}
+.account-input input:focus{ outline: none; border: 1px solid #33CC66;}
+.account-input select:focus{outline: none;}
+.account-input textarea:focus{outline: none;}
+.radio-input input{ width: auto; float: left; margin-left: 25px;}
+.radio-input i{ float: left; margin-left: 10px; line-height: 30px;}
+.account-input-error{ text-align: right; height: 30px; color: #F00; margin-top: 10px;}
+.account-btn{ width: 100%; margin: auto;}
+.account-btn input{ width: 100%; height: 30px; line-height: 30px; border: none;background: #33CC66;color: #fff;border: none;box-shadow: 2px 2px 2px hsla(0, 0%, 80.6667%, 0.8);letter-spacing: 5px;
+-webkit-appearance: none;}
+.account-btn input:focus{ outline: none;}
+.account-btn input:hover{ background: #21B252;}
+
+.con-right-account-form-pic{ width: 38%; float: right;}
+.headPhoto-file{ margin: 10px 0px; width: 50%; border: 1px solid #ddd; height: 30px; line-height: 30px; float: left;}
+.headPhoto-btn{ width: 40%; float: right;}
+.headPhoto-btn input{ background: #fff; height: 30px; line-height: 30px; margin-top: 10px; padding: 0px 25px; border: 1px solid #ddd; cursor: pointer; float: right;}
+.headPhoto-btn input:focus{ outline: none;}
+.headPhoto-btn input:hover{ background: #33CC66; color: #fff;}
+.headPhoto-default{ width: 100%; float: left; margin-top: 10px; text-align: center;}
+.headPhoto-default img{ width: 128px; height: 128px; overflow: hidden;}
+
+
+/*activity.html*/
+.activity-time-part{ width: 70%; float: right;}
+.account-input input.activity-time-input{ margin-bottom: 10px; width: 45%; float: left;}
+.activity-time-part span{ float: left; line-height: 30px; margin: 0 11px;}
+
+/*show.html*/
+.activity-con{ width: 70%; float: right; line-height: 30px;}
+.activity-con a{ text-decoration: underline;}
+.activity-enroll{ width: 100%; clear: both;}
+.activity-enroll input{ width: 40%;}
+.activity-enroll2 form input { width: 20%;}
+
+/*gred.html*/
+.con-right-grade-apply{}
+.con-right-grade-apply a{ display: block; width: 200px; text-align: center; height: 30px; line-height: 30px; border: 1px solid #ddd; color: #444;}
+.con-right-grade-apply a:hover{ background: #33CC66; color: #fff;}
+
+.con-left-person{ background: url(../images/con_left_pic_1.png) no-repeat;}
+.con-left-activity{background: url(../images/con_left_pic_2.png) no-repeat;}
+.con-left-grade{background: url(../images/con_left_pic_3.png) no-repeat;}
+
+/*rePassword.html*/
+.retrieve-pass{ padding-top: 10px;}
+.retrieve-pass-step{ width: 100%; overflow: hidden; margin-bottom: 60px;}
+.retrieve-pass-step h3{ width: 50%; float: left; font-size: 1.2em; text-align: center; height: 50px; line-height: 50px; font-weight: 100; border-bottom: 4px solid #fff;}
+.retrieve-pass-step h3 span{ margin-right: 5px;}
+.retrieve-pass-step h3.retrieve-pass-step-current{ border-bottom-color: #197FEE;}
+
+/*map.html*/
+#allmap {width:  100%;height: 500px;overflow: hidden;font-family:"微软雅黑"; float: left;}
+.map-value{ width: 100%; float: left; margin-top: 20px;}
+
+/*login.html*/
+.login-container{ width: 100%; height: 100%;height: 785px; background: url(${path }/static/images/login/login_bg.png) no-repeat top;}
+.sub-login-container{ padding-top: 80px;}
+.login-con-l{ width: 450px; float: left;}
+.login-logo{ width: 100%; height: 111px; background: url(${path }/static/images/login/login_logo.png) no-repeat center;}
+.login-form{ width: 100%;}
+.login-form li{ width: 100%; float: left; margin-top: 20px;}
+.login-form-input{ width: 450px; height: 50px; line-height: 50px; font-size: 1.2em; text-indent: 20px; border: 1px solid #AEAEAE;}
+.login-form-input:focus{ outline: none;}
+.login-form-checkbox{ width: 100%; line-height: 50px; color: #777;}
+.login-form-checkbox input{float: left; margin-top: 19px; margin-right: 10px;}
+.login-form-checkbox label{ float: left;}
+.login-form-checkbox a{ float: right; color: #777;}
+.login-form-checkbox a:hover{ text-decoration: underline;}
+.login-sign{ width: 45%; height: 50px; color: #fff; border: none; cursor: pointer; font-size: 1.2em;}
+.login-sign-user{float: left; background: #3399FF;}
+.login-sign-admin{float: right; background: #B21F34;}
+.login-reg{ display: block; text-align: center; color: #fff; background:#33CC66; border: none;}
+
+.login-con-r{ width: 703px; height: 470px; float: right; background: url(${path }/static/images/login/login_right_pic.png) no-repeat;}
+
+/*register.html*/
+.register-con{ border: none;}
+.register-con h1{ margin: 20px; font-weight: 100;}
+.login-input{ width: 98%; margin: auto; overflow: hidden; margin-bottom: 20px;}
+.login-input label{ width: 20%; margin-right: 2%; display: block; text-align: right; float: left; height: 30px; line-height: 30px; font-size: 0.8em; font-weight: bold;}
+.login-input label span{ color: red;}
+.login-input input{ width: 60%; height: 40px; line-height: 30px; text-indent: 10px; border: 1px solid #C9C9C9;}
+.login-input input:focus{ border-color: #197FEE;}
+.login-input select{width: 60%; height: 40px; line-height: 34px; float: left; text-indent: 0px; border: 1px solid #ccc;}
+.login-input textarea{ width: 60%; float: left; min-height: 60px; height: 18px; line-height: 18px; border: 1px solid #ccc; padding-top: 5px;}
+.radio-input{ position: relative;}
+.radio-input input{ width: 20px; float: left; position: relative; margin-left: 10px;}
+.radio-input i{ font-size: 0.8em; line-height: 30px; margin: 0 5px; margin-right: 30px; float: left; margin-top: 5px;}
+
+.login-input input,select,textarea:focus{ outline:none;}
+.login-input-error{ font-size: 0.8em; color: #F00; float: right;}
+.login-btn{ width: 708px; margin-left: 270px;}
+.login-btn input{ width: 100%; height: 40px; line-height: 40px; background: #197FEE; color: #fff; border: none; box-shadow: 2px 2px 2px hsla(0, 0%, 80.6667%, 0.8); letter-spacing: 5px; -webkit-appearance: none; outline: none;}
+.login-btn input:hover{ background: #126FD8;}
+.login-error{ margin-left: 260px; margin-top: 20px; font-size: 1.2em; color: #F00; line-height: 25px;}
+.login-error span{ float: left;}
+.login-error a{ color: #33CC66; text-decoration: underline; margin-left: 5px; float: right;}
+
+.user-info{ padding-top: 20px;}
+.user-info h4{ width: 89%; padding-left: 11%; background: #F5F5F5; display: block; margin: auto; margin-bottom: 10px; height: 30px; line-height: 30px; font-size: 0.8em; font-weight: 100; color: #000;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

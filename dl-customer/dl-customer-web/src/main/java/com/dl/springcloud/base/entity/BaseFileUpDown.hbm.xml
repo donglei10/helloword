@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-4-26 19:00:32 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ustctech.base.entity.BaseFileUpDown" table="base_file_up_down" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="model" type="string">
+            <column name="model" length="655" />
+        </property>
+        <property name="tablename" type="string">
+            <column name="tablename" />
+        </property>
+        <property name="bzid" type="java.lang.Integer">
+            <column name="bzid" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="5" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="145" />
+        </property>
+    </class>
+</hibernate-mapping>

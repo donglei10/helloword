@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="left">
+	<!--左边兰 -->
+		<div class="panel-group" id="accordion">
+		    <div class="panel panel-default">
+		        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion"   href="#collapseOne">
+		            <h4 class="panel-title">
+		                 	菜单1
+		            </h4>
+		        </div>
+		        <div id="collapseOne" class="panel-collapse collapse in">
+		            <div class="panel-body">
+		               	<ul>
+		               		<li>
+<!-- 		               			<a data-toggle="modal" th:href="@{/dic/list}" data-target="#content_modal">字典管理</a> -->
+		               			<a th:onclick="|javascript:loadUrl('@{/dic/list}')|" 
+		               			  target="content_modal_frame">字典管理</a>
+		               		</li>
+		               		<li>子菜单2</li>
+		               	</ul>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="panel panel-success">
+		        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion"  href="#collapseTwo">
+		            <h4 class="panel-title">
+		             	 菜单2
+		            </h4>
+		        </div>
+		        <div id="collapseTwo" class="panel-collapse collapse">
+		            <div class="panel-body">
+		               <ul>
+		               		<li>子菜单21</li>
+		               		<li>子菜单22</li>
+		               	</ul>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="panel panel-info">
+		        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" 
+		                href="#collapseThree">
+		            <h4 class="panel-title">
+		               	 菜单3
+		            </h4>
+		        </div>
+		        <div id="collapseThree" class="panel-collapse collapse">
+		            <div class="panel-body">
+		               <ul>
+		               		<li>子菜单31</li>
+		               		<li>子菜单32</li>
+		               	</ul>
+		            </div>
+		        </div>
+		    </div>
+		     
+		</div>
+</div>
+<script>
+$(function () { $('#collapseOne').collapse({
+        toggle: false
+    })});
+    $(function () { $('#collapseTwo').collapse('show')});
+    $(function () { $('#collapseThree').collapse('hide')});
+    
+   
+    
+</script>
+</html>

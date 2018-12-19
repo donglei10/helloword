@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: dl-provider-web
+Implementation-Version: 1.0
+Built-By: Administrator
+Implementation-Vendor-Id: com.dl.springcloud
+Build-Jdk: 1.8.0_11
+Implementation-URL: http://projects.spring.io/spring-boot/dl-provider/
+ dl-provider-web/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

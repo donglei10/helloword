@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-4-26 19:00:32 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ustctech.base.entity.BaseFile" table="base_file" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="fileId" type="java.lang.Integer">
+            <column name="file_id" />
+        </property>
+        <property name="fileName" type="string">
+            <column name="file_name" length="500" />
+        </property>
+        <property name="filePath" type="string">
+            <column name="file_path" length="800" />
+        </property>
+        <property name="fileExt" type="string">
+            <column name="file_ext" length="145" />
+        </property>
+        <property name="fileSize" type="java.lang.Long">
+            <column name="file_size" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="5" />
+        </property>
+        <property name="fileRemark" type="string">
+            <column name="file_remark" length="555" />
+        </property>
+        <many-to-one name="baseFileUpDown" insert="false" update="false" 
+        	not-null="false" unique="false" not-found="ignore"
+        	lazy="false" column="file_id">
+        </many-to-one>
+    </class>
+</hibernate-mapping>

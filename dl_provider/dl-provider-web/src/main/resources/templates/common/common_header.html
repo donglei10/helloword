@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common_header(title)">
+ 	<meta charset="utf-8"/>
+  	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+	<title th:text="${title}">首页</title>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/static/ajaxupload/uploadify.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/bootstrap.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/bootstrap-theme.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/ie10-viewport-bug-workaround.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/bootstrap-table.min.css}"/>
+	
+	<!--
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/bootstrap.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/bootstrap.min.css.map}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/bootstrap-theme.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/bootstrap-theme.min.css.map}"/>
+	  -->
+   
+</head>
+</html>

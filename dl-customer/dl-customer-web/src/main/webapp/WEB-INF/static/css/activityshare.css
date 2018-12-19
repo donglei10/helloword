@@ -1,0 +1,108 @@
+/*basic style! */
+*{ margin: 0px; padding: 0px; font-family: 'Î¢ÈíÑÅºÚ';}
+body,html{ margin: 0px; padding: 0px;}
+img{ border: 0px;}
+ul li,ol{ list-style-type: none;}
+a{ text-decoration: none; outline: none;}
+
+a{transition: background 1s; -moz-transition: background 1s; -webkit-transition: background 1s; -o-transition: background 1s;}
+.clear{ clear: both;}
+
+.divBorderRadius-2{border-radius:2px;-moz-border-radius: 2px; -webkit-border-radius: 2px;}
+.divBorderRadius-4{border-radius:4px;-moz-border-radius: 4px; -webkit-border-radius: 4px;}
+.divBorderRadius-6{border-radius:6px;-moz-border-radius: 6px; -webkit-border-radius: 6px;}
+.divBorderRadius-10{border-radius:10px;-moz-border-radius: 10px; -webkit-border-radius: 10px;}
+.divShadow{box-shadow:0 5px 3px -3px #D3D3D3;-webkit-box-shadow:0 5px 3px -3px #D3D3D3;-moz-box-shadow:0 5px 3px -3px #D3D3D3;}
+.divShadow1{box-shadow:0 3px 2px -2px #D3D3D3;-webkit-box-shadow:0 3px 2px -2px #D3D3D3;-moz-box-shadow:0 3px 2px -2px #D3D3D3;}
+.divShadow2{box-shadow:0 2px 1px -1px #D3D3D3;-webkit-box-shadow:0 2px 1px -1px #D3D3D3;-moz-box-shadow:0 2px 1px -1px #D3D3D3;}
+
+body{ background: #fff;}
+/*login.html!*/
+.divW{ width: 480px; margin: auto; background: #fff; border-left: 1px solid #33CC66; border-right: 1px solid #33CC66;}
+.logo{ text-align: center;}
+.logo-img{ width: 75px; height: 75px; margin: 25px auto 25px auto; box-shadow: 2px 2px 2px hsla(0, 0%, 80.6667%, 0.8);}
+.login{ padding-bottom: 50px;}
+.login-input{ width: 90%; margin: auto; overflow: hidden; margin-bottom: 20px;}
+.login-input label{ width: 30%; display: block; text-align: center; float: left; height: 30px; line-height: 30px;}
+.login-input input{ width: 68%; float: right; height: 30px; line-height: 30px; text-indent: 10px; border: 1px solid #ccc;}
+.login-input input:focus{ outline:none;}
+.login-input-error{ font-size: 0.8em; color: #F00; float: right;}
+.login-btn{ width: 90%; margin: auto;}
+.login-btn input{ width: 100%; height: 30px; line-height: 30px; background: #33CC66; color: #fff; border: none; box-shadow: 2px 2px 2px hsla(0, 0%, 80.6667%, 0.8);}
+.login-error{ width: 90%; margin: auto; margin-top: 20px; font-size: 0.8em; color: #F00; line-height: 25px;}
+.login-error span{ float: left;}
+.login-error a{ color: #33CC66; text-decoration: underline; margin-left: 5px; float: right;}
+
+/*index.html!*/
+.main{}
+.main ul li{ width: 100%; text-align: center; margin-bottom: 20px;}
+.main ul li.li-first{}
+.main ul li a{ 
+	width: 90%; margin: auto; display: block; height: 60px; line-height: 60px; color: #fff; font-weight: 100; font-size: 1em; 
+	text-shadow: 0px 1px #7C7C7C; 
+	background: linear-gradient(90deg, #27B255 0%, #31E86F 100%);
+	box-shadow: 2px 2px 2px hsla(0, 0%, 80.6667%, 0.8);
+	border-radius: 8px;
+	transition: all 1s ease 0s;
+}
+.main ul li a:hover{
+	color: #fff;
+	text-shadow: 0px 1px white;
+	background: linear-gradient(90deg, #31E86F 0%, #27B255 100%);
+}
+
+/*list.html!*/
+.top-header{ height: 45px; line-height: 45px;}
+.top-header span{ margin-left: 5px; float: left; font-size: 0.8em; font-weight: bold; color: #33CC66;}
+.top-header span a{ margin-left: 5px; color: #33CC66; text-decoration: underline;}
+.top-header i{ width: 18px; height: 18px; overflow: hidden; float: right; margin-right: 5px; margin-top: 15px; background: url(../images/reload.png) no-repeat;}
+
+.slider{max-height: 150px; overflow: hidden;}
+.slider img{ width: 100%;}
+
+.list-main{ background: #F2F1F1; overflow: hidden;}
+.list-main h4{width: 98%; padding: 0 1%; font-size: 0.8em; font-weight: 100; height: 30px; line-height: 30px; color: #333; background: #fff; margin-bottom: 2px;}
+.list-main ul li{ width: 98%; padding: 5px 1%; background: #fff; overflow: hidden; margin-bottom: 10px;}
+.list-main ul li a{ width: 100%; color: #000;}
+.list-main-con{ width: 60%; float: left;}
+.list-main-con h5{ font-size: 1em; margin-bottom: 10px;}
+.list-main-con p{ font-size: 0.8em; line-height: 20px; margin-bottom: 5px;}
+.list-main-con p i{ background-size: 15px 15px; background-repeat: no-repeat; background-position: 0px center; padding-left: 20px;}
+.list-main-con p i.date-pic{ background-image: url(${path }/static/images/date_icon.png);}
+.list-main-con p i.site-pic{ background-image: url(${path }/static/images/site_icon.png);}
+.list-main-con p i.cate-pic{ background-image: url(${path }/static/images/cate_icon.png);}
+.list-main-con p.list-main-con-other{ color: #666; margin-top: 20px;}
+.list-main-con p.list-main-con-other span{ margin-right: 5px;}
+
+.list-main ul li a .list-main-pic{ width: 30%; float: right;}
+.list-main ul li a .list-main-pic img{ width: 100%;}
+
+/*content.html!*/
+.con-pic{}
+.con-pic img{ width: 100%;}
+.con-main{ overflow: hidden; padding-bottom: 10px;}
+.con-main-con{width: 98%; padding: 5px 1%;}
+.con-main-intro{width: 98%; padding: 5px 1%;}
+.con-main-intro h5{ font-size: 1em; margin-bottom: 10px;}
+.con-form{ overflow: hidden; padding-bottom: 20px;}
+.con-form-select{width: 98%; padding: 5px 1%; height: 30px;}
+.con-form-select label{width: 30%; display: block; text-align: left; float: left; height: 30px; line-height: 30px; font-size: 0.8em;}
+.con-form-select select{width: 68%; float: right; height: 30px; line-height: 30px; border: 1px solid #ccc;}
+.con-form-select select:focus{ outline:none;}
+.con-form-error{ color:#F00; height: 20px; font-size: 0.8em; text-align: right; padding-right: 1%;}
+.con-form-btn{width: 90%; margin-left: 5%; margin-top: 10px; height: 40px; line-height: 40px; background: #33CC66; color: #fff; border: none; box-shadow: 2px 2px 2px hsla(0, 0%, 80.6667%, 0.8);}
+.con-form-btn-dead{width: 90%; text-align: center; font-size: 0.8em; margin-left: 5%; margin-top: 10px; height: 40px; line-height: 40px; background: #C5C5C5; color: #fff; border: none; box-shadow: 2px 2px 2px hsla(0, 0%, 80.6667%, 0.8);}
+
+/*success.html!*/
+.success{}
+.success p{ width: 100%; text-align: center; font-size: 2em; color: #33CC66;}
+.success a{ display: block; width: 60%; text-align: center; height: 30px; line-height: 30px; color: #33CC66; border: 1px solid #33CC66; margin: auto; margin-top: 20px;}
+.success a:hover{ background: #33CC66; color: #fff;}
+
+/*single.html!*/
+.single-main{}
+.single-main-header{width: 98%; padding: 5px 1%; border-bottom: 1px solid #ccc;}
+.single-main-header h5{ font-size: 1.2em; margin-bottom: 5px; font-weight: 100;}
+.single-main-header p{ color: #666;}
+.single-main-con{width: 98%; padding: 5px 1%;}
+.single-main-con p{}

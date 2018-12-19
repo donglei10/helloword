@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head th:replace="common/common_header :: common_header('')">
+    <title>用户首页</title>
+</head>
+	<link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/dist/css/dashboard.css}"/>
+	
+<body>
+	<div th:replace="frame/main_nav :: nav"></div>
+	
+ 	<div class="container-fluid">
+	    <div class="row">
+	    	<!--左边栏 -->
+	        <div class="col-sm-2 col-md-2 sidebar"   >
+	        	<div th:replace="frame/main_left :: left"></div>
+	        </div>
+	        <!-- 中间响应区域 -->
+	        <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 main"  >
+<!-- 	         	<iframe id="content_modal_frame" name="content_modal_frame" style="width: 100%;height: 100%;border: 0;" src="" ></iframe> -->
+	         	<div id="content_modal_frame" name="content_modal_frame" style="width: 100%;height: 100%;border: 0;"  ></div>
+	        </div>
+	    </div>
+	</div>
+	
+
+<!-- 底边栏 -->
+</body>
+<div th:replace="common/common_foot :: foot"></div>
+<script>
+/*<![CDATA[*/
+	function loadUrl(url){
+    	$("#content_modal_frame").load(url);
+    }
+ 
+ /*]]>*/
+</script>
+</html>

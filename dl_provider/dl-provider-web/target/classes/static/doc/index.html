@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>活动集接口</title>
+		<link rel="stylesheet" href="resource/style.css" />
+		<script type="text/javascript" src="resource/main.js?config=TeX-AMS_HTML"></script>
+		<script type="text/javascript" src="resource/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="resource/scrolltopcontrol.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>活动集APP接口文档</h1>
+			<div class="toc">
+				<ul>
+					<li><a href="#返回码说明">返回码说明</a>
+						<li><a href="#请求header">请求header</a>
+							<li style="height:10px;"></li>
+							<li><a href="#活动列表">活动列表</a></li>
+							<li><a href="#活动报名">活动报名</a></li>
+							<li><a href="#活动签到">活动签到</a></li>
+							<li><a href="#活动评论">活动评论</a></li>
+							<li><a href="#活动详情">活动详情</a></li>
+							<li><a href="#活动评论列表">活动评论列表</a></li>
+							<li><a href="#我创建的活动列表">我创建的活动列表</a></li>
+							<li><a href="#我评论的活动列表">我评论的活动列表</a></li>
+							<li><a href="#第二成绩单列表">第二成绩单列表（我参与的活动）</a></li>
+							<li><a href="#申请打印第二成绩单">申请打印第二成绩单</a></li>
+							<li><a href="#附件上传">附件上传</a></li>
+							<li style="height:10px;"></li>
+							<li><a href="#登录">登录(POST)</a></li>
+							<li><a href="#人员基础信息查询">人员基础信息查询(GET)</a></li>
+							<li><a href="#人员基础信息修改">人员基础信息修改(POST)</a></li>
+                            <li><a href="#消息列表">消息列表</a></li>
+				</ul>
+			</div>
+			<!-- 公用说明 -->
+			<div class="common-div">
+				<p><strong id="返回码说明">返回码说明:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>返回参数</th>
+							<th>返回参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>code</td>
+							<td>返回代号：0访问成功，－1～－99 各类错误信息</td>
+						</tr>
+						<tr>
+							<td>cmd</td>
+							<td>成功/失败信息</td>
+						</tr>
+						<tr>
+							<td>values </td>
+							<td>接口需求的具体数据，键值对列表</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong id="请求header">请求header:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>请求参数</th>
+							<th>数据类型</th>
+							<th>请求参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>client</td>
+							<td>String</td>
+							<td>客户端类型：'android', 'ios'</td>
+						</tr>
+						<tr>
+							<td>token</td>
+							<td>String</td>
+							<td>用户32位登录口令</td>
+						</tr>
+						<tr>
+							<td>uuid</td>
+							<td>String</td>
+							<td>“设备id”//ios设备id android不填</td>
+						</tr>
+						<tr>
+							<td>imei</td>
+							<td>String</td>
+							<td>“设备id”//android设备id iOS不填</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- 活动 -->
+			<div class="private-div">
+				<h3 id="活动列表">活动列表</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/listactivity">http://222.195.70.49:8000/ustc/doaction/activity/listactivity</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>userid</td>
+							<td>string</td>
+							<td>人员主键id</td>
+						</tr>
+						<tr>
+							<td>page</td>
+							<td>string</td>
+							<td>页数</td>
+						</tr>
+						<tr>
+							<td>pagesize</td>
+							<td>string</td>
+							<td>页面总数</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "listactivity 成功",//or 失败信息,
+	    "values": {
+	        “total” : “活动总数”,
+			“activities” : [
+				{
+					“id” : “活动主键id”,
+					“name” : “活动名称”,
+					“organizers” : “主办方”,
+					“process” : “活动进程（招募成员，参加活动，活动进行中，活动结束）”,
+					“processid” : “活动进程id”，
+					“duration” : “活动进程持续时间”，
+					“venue” : “活动地点”，
+					“published” : “活动发布时间”，
+					“poster” : “活动海报url”，
+					“shareurl” : “分享活动的url”，
+					"lon": “活动lon坐标”，
+					“lat” : “活动lat坐标”
+
+				},
+				{}
+			]
+	    }
+
+	}</code></pre>
+			</div>
+			
+			<!-- 我创建的活动列表 -->
+			<div class="private-div">
+				<h3 id="我创建的活动列表">我创建的活动列表</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/listcreateactivity">http://222.195.70.49:8000/ustc/doaction/activity/listcreateactivity</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>userid</td>
+							<td>string</td>
+							<td>人员主键id</td>
+						</tr>
+						<tr>
+							<td>page</td>
+							<td>string</td>
+							<td>页数</td>
+						</tr>
+						<tr>
+							<td>pagesize</td>
+							<td>string</td>
+							<td>页面总数</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "listactivity 成功",//or 失败信息,
+	    "values": {
+	        “total” : “活动总数”,
+			“activities” : [
+				{
+					“id” : “活动主键id”,
+					“name” : “活动名称”,
+					“organizers” : “主办方”,
+					“process” : “活动进程（招募成员，参加活动，活动进行中，活动结束）”,
+					“processid” : “活动进程id”，
+					“duration” : “活动进程持续时间”，
+					“venue” : “活动地点”，
+					“published” : “活动发布时间”，
+					“poster” : “活动海报url”，
+					“shareurl” : “分享活动的url”，
+					"lon": “活动lon坐标”，
+					“lat” : “活动lat坐标”
+
+				},
+				{}
+			]
+	    }
+
+	}</code></pre>
+			</div>
+			
+			
+			<!-- 第二成绩单列表 -->
+			<div class="private-div">
+				<h3 id="第二成绩单列表">第二成绩单列表</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/listsecondactivity">http://222.195.70.49:8000/ustc/doaction/activity/listsecondactivity</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>userid</td>
+							<td>string</td>
+							<td>人员主键id</td>
+						</tr>
+						<tr>
+							<td>page</td>
+							<td>string</td>
+							<td>页数</td>
+						</tr>
+						<tr>
+							<td>pagesize</td>
+							<td>string</td>
+							<td>页面总数</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "listactivity 成功",//or 失败信息,
+	    "values": {
+	        “total” : “活动总数”,
+			“activities” : [
+				{
+					“id” : “活动主键id”,
+					“name” : “活动名称”,
+					“organizers” : “主办方”,
+					“process” : “活动进程（招募成员，参加活动，活动进行中，活动结束）”,
+					“processid” : “活动进程id”，
+					“duration” : “活动进程持续时间”，
+					“venue” : “活动地点”，
+					“published” : “活动发布时间”，
+					“poster” : “活动海报url”，
+					“shareurl” : “分享活动的url”，
+					"lon": “活动lon坐标”，
+					“lat” : “活动lat坐标”
+
+				},
+				{}
+			]
+	    }
+
+	}</code></pre>
+			</div>
+			
+			
+			<!-- 第二成绩单列表 -->
+			<div class="private-div">
+				<h3 id="申请打印第二成绩单">申请打印第二成绩单</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/user/printreport">http://222.195.70.49:8000/ustc/doaction/user/printreport</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>remark</td>
+							<td>string</td>
+							<td>备注</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "printreport" 成功",//or 失败信息,
+	    "values": "" ,
+	    }
+
+	}</code></pre>
+			</div>
+			
+			
+			<!-- 我评论的活动列表 -->
+			<div class="private-div">
+				<h3 id="我评论的活动列表">我评论的活动列表</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/listmyreviewactivity">http://222.195.70.49:8000/ustc/doaction/activity/listmyreviewactivity</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>userid</td>
+							<td>string</td>
+							<td>人员主键id</td>
+						</tr>
+						<tr>
+							<td>page</td>
+							<td>string</td>
+							<td>页数</td>
+						</tr>
+						<tr>
+							<td>pagesize</td>
+							<td>string</td>
+							<td>页面总数</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "listactivity 成功",//or 失败信息,
+	    "values": {
+	        “total” : “活动总数”,
+			“activities” : [
+				{
+					“id” : “活动主键id”,
+					“name” : “活动名称”,
+					“organizers” : “主办方”,
+					“process” : “活动进程（招募成员，参加活动，活动进行中，活动结束）”,
+					“processid” : “活动进程id”，
+					“duration” : “活动进程持续时间”，
+					“venue” : “活动地点”，
+					“published” : “活动发布时间”，
+					“poster” : “活动海报url”，
+					“shareurl” : “分享活动的url”，
+					"lon": “活动lon坐标”，
+					“lat” : “活动lat坐标”
+
+				},
+				{}
+			]
+	    }
+
+	}</code></pre>
+			</div>
+			
+			
+			
+			<!-- 活动报名 -->
+			<div class="private-div">
+				<h3 id="活动报名">活动报名</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/joinactivity">http://222.195.70.49:8000/ustc/doaction/activity/joinactivity</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>activityid</td>
+							<td>string</td>
+							<td>活动主键id</td>
+						</tr>
+						<tr>
+							<td>orgid</td>
+							<td>string</td>
+							<td>活动小组id”，//对于活动已分组的</td>
+						</tr>
+						<tr>
+							<td>jointype</td>
+							<td>string</td>
+							<td>参与活动类型，备用字段</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "joinactivity 成功",//or 失败信息,
+	    "values": {}
+	}</code></pre>
+			</div>
+			<!-- 活动签到 -->
+			<div class="private-div">
+				<h3 id="活动签到">活动签到</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/signactivity">http://222.195.70.49:8000/ustc/doaction/activity/signactivity</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>activityid</td>
+							<td>string</td>
+							<td>活动主键id</td>
+						</tr>
+						<tr>
+							<td>lon</td>
+							<td>string</td>
+							<td>经度</td>
+						</tr>
+						<tr>
+							<td>lat</td>
+							<td>string</td>
+							<td>纬度</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "signactivity 成功",//or 失败信息,
+	    "values": {}
+	}</code></pre>
+			</div>
+			<!-- 活动评论 -->
+			<div class="private-div">
+				<h3 id="活动评论">活动评论</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/signactivity">http://222.195.70.49:8000/ustc/doaction/activity/ reviewactivity</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>activityid</td>
+							<td>string</td>
+							<td>活动主键id</td>
+						</tr>
+						<tr>
+							<td>stars</td>
+							<td>string</td>
+							<td>评论星级</td>
+						</tr>
+						<tr>
+							<td>comment</td>
+							<td>string</td>
+							<td>评论内容</td>
+						</tr>
+						<tr>
+							<td>fileids</td>
+							<td>string</td>
+							<td>附件ids，用逗号隔开</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "reviewactivity 成功",//or 失败信息,
+	    "values": {}
+	}</code></pre>
+			</div>
+			<!-- 活动详情 -->
+			<div class="private-div">
+				<h3 id="活动详情">活动详情</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/detailactivity">http://222.195.70.49:8000/ustc/doaction/activity/detailactivity</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>activityid</td>
+							<td>string</td>
+							<td>活动主键id</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">
+		{
+		"code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "listactivity 成功",//or 失败信息,
+	    “id” : “活动主键id”,
+		“name” : “活动名称”,
+		“organizers” : “主办方”,
+		“process” : “活动进程（招募成员，参加活动，活动进行中，活动结束）”,
+		“processid” : “活动进程id”，
+		“duration” : “活动进程持续时间”，
+		“venue” : “活动地点”，
+		“published” : “活动发布时间”，
+		“poster” : “活动海报url”，
+		“shareurl” : “分享活动的url”，
+		"lon": “活动lon坐标”，
+		“lat” : “活动lat坐标”，
+		audiencememberstype："报名类型（audience（观众）,members（组员）（逗号隔开，如果空表示没有报名））"
+
+	}</code></pre>
+			</div>
+			<!-- 活动评论列表 -->
+			<div class="private-div">
+				<h3 id="活动评论列表">活动评论列表</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/activity/listreviews">http://222.195.70.49:8000/ustc/doaction/activity/listreviews</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>activityid</td>
+							<td>string</td>
+							<td>活动主键id</td>
+						</tr>
+						<tr>
+							<td>page</td>
+							<td>string</td>
+							<td>页数</td>
+						</tr>
+						<tr>
+							<td>pagesize</td>
+							<td>string</td>
+							<td>页面总数</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "reviewactivity 成功",//or 失败信息,
+	    "values": {
+			“total” : “评论总数”,
+			“comments” : [
+				{
+					“id” : “评论主键id”,
+					“comment” : “评论内容”,
+					“time” : “评论时间”，
+					“fileurls” : “评论附件url，多个用逗号隔开”
+				},
+				{}
+			]
+
+		}
+	}</code></pre>
+			</div>
+			<!-- 附件上传 -->
+			<div class="private-div">
+				<h3 id="附件上传">附件上传</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/file/fileupload">http://222.195.70.49:8000/ustc/doaction/file/ fileupload</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>file</td>
+							<td>string</td>
+							<td>附件内容</td>
+						</tr>
+						<tr>
+							<td>remark</td>
+							<td>string</td>
+							<td>附件描述</td>
+						</tr>
+						<tr>
+							<td>type</td>
+							<td>string</td>
+							<td>附件类型</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "fileupload 成功",//or 失败信息,
+	    "values": {
+			"fid":附件ids，多个附件用","隔开
+		}
+	}</code></pre>
+			</div>
+			<!-- 登陆 -->
+			<div class="private-div">
+				<h3 id="登录">登录(POST)</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/mobile/index.php/login">http://222.195.70.49:8000/mobile/index.php/login</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>username</td>
+							<td>string</td>
+							<td>用户名或手机号</td>
+						</tr>
+						<tr>
+							<td>psword</td>
+							<td>string</td>
+							<td>密码</td>
+						</tr>
+						<tr>
+							<td>binding</td>
+							<td>string</td>
+							<td>“yes或者no”//是否账号绑定设备，用来一键和后台登录</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+		code: 200,
+		cmd: "成功",//or 失败信息,
+		values {
+			id: "人员主键id",
+			realName: "姓名",
+			department: "院系",
+			class: "班级",
+			studentID: "学号",
+			gender: "性别",
+			idCard: "身份证号",
+			phoneNumber: "手机号",
+			height: "身高",
+			policy: "政治面貌",
+			accountid: "账号ID（邮箱地址）",	
+			name: "昵称",
+			headurl: "头像URL",//头像图片文件地址
+			addr: "住址",
+			qrcode: "二维码",
+			signature: "个性签名",
+			qqid: "QQ号",
+			label: "我的兴趣爱好（以标签形式展示）"
+		}
+	}</code></pre>
+			</div>
+			<!-- 人员基础信息查询 -->
+			<div class="private-div">
+				<h3 id="人员基础信息查询">人员基础信息查询(GET)</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/mobile/index.php/login">http://222.195.70.49:8000/mobile/index.php/login</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>userid</td>
+							<td>string</td>
+							<td>人员主键id</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+		code: 200,
+		cmd: "成功",//or 失败信息,
+		values {
+			id: "人员主键id",
+			realName: "姓名",
+			department: "院系",
+			class: "班级",
+			studentID: "学号",
+			gender: "性别",
+			idCard: "身份证号",
+			phoneNumber: "手机号",
+			height: "身高",
+			policy: "政治面貌",
+			accountid: "账号ID（邮箱地址）",	
+			name: "昵称",
+			headurl: "头像URL",//头像图片文件地址
+			addr: "住址",
+			qrcode: "二维码",
+			signature: "个性签名",
+			qqid: "QQ号",
+			label: "我的兴趣爱好（以标签形式展示）"
+		}
+	}</code></pre>
+			</div>
+
+			<!-- 人员基础信息修改 -->
+			<div class="private-div">
+				<h3 id="人员基础信息修改">人员基础信息修改(POST)</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/mobile/index.php/login">http://222.195.70.49:8000/mobile/index.php/login</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>id</td>
+							<td>string</td>
+							<td>人员主键id</td>
+						</tr>
+						<tr>
+							<td>realName</td>
+							<td>string</td>
+							<td>姓名</td>
+						</tr>
+						<tr>
+							<td>department</td>
+							<td>string</td>
+							<td>院系</td>
+						</tr>
+						<tr>
+							<td>class</td>
+							<td>string</td>
+							<td>班级</td>
+						</tr>
+						<tr>
+							<td>studentID</td>
+							<td>string</td>
+							<td>学号</td>
+						</tr>
+						<tr>
+							<td>gender</td>
+							<td>string</td>
+							<td>性别</td>
+						</tr>
+						<tr>
+							<td>idCard</td>
+							<td>string</td>
+							<td>身份证号</td>
+						</tr>
+						<tr>
+							<td>phoneNumber</td>
+							<td>string</td>
+							<td>手机号</td>
+						</tr>
+						<tr>
+							<td>height</td>
+							<td>string</td>
+							<td>身高</td>
+						</tr>
+						<tr>
+							<td>policy</td>
+							<td>string</td>
+							<td>政治面貌</td>
+						</tr>
+						<tr>
+							<td>accountid</td>
+							<td>string</td>
+							<td>账号ID（邮箱地址）</td>
+						</tr>
+						<tr>
+							<td>name</td>
+							<td>string</td>
+							<td>昵称</td>
+						</tr>
+						<tr>
+							<td>headurl</td>
+							<td>string</td>
+							<td>"头像URL",//头像图片文件地址</td>
+						</tr>
+						<tr>
+							<td>addr</td>
+							<td>string</td>
+							<td>住址</td>
+						</tr>
+						<tr>
+							<td>qrcode</td>
+							<td>string</td>
+							<td>二维码</td>
+						</tr>
+						<tr>
+							<td>signature</td>
+							<td>string</td>
+							<td>个性签名</td>
+						</tr>
+						<tr>
+							<td>qqid</td>
+							<td>string</td>
+							<td>QQ号</td>
+						</tr>
+						<tr>
+							<td>label</td>
+							<td>string</td>
+							<td>我的兴趣爱好（以标签形式展示）</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+		code: 200,
+		cmd: "成功",//or 失败信息,
+		values {
+			id: "人员主键id",
+			realName: "姓名",
+			department: "院系",
+			class: "班级",
+			studentID: "学号",
+			gender: "性别",
+			idCard: "身份证号",
+			phoneNumber: "手机号",
+			height: "身高",
+			policy: "政治面貌",
+			accountid: "账号ID（邮箱地址）",	
+			name: "昵称",
+			headurl: "头像URL",//头像图片文件地址
+			addr: "住址",
+			qrcode: "二维码",
+			signature: "个性签名",
+			qqid: "QQ号",
+			label: "我的兴趣爱好（以标签形式展示）"
+		}
+	}</code></pre>
+			</div>
+
+   <div class="private-div">
+				<h3 id="消息列表">消息列表</h3>
+				<blockquote>
+					<p>eg.<a href="http://222.195.70.49:8000/ustc/doaction/notice/listnotice">http://222.195.70.49:8000/ustc/doaction/notice/listnotice</a> </p>
+				</blockquote>
+				<p><strong>请求参数:</strong> </p>
+				<table>
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>userid</td>
+							<td>int</td>
+							<td>人员主键id</td>
+						</tr>
+						<tr>
+							<td>page</td>
+							<td>int</td>
+							<td>页数</td>
+						</tr>
+						<tr>
+							<td>pagesize</td>
+							<td>int</td>
+							<td>页面总数</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回参数data:</strong> </p>
+				<pre class="prettyprint"><code class=" hljs cs">{
+	    "code": 200,  //返回状态200 - 成功   201 - 失败
+	    "cmd": "listnotice 成功",//or 失败信息,
+	    "values": [
+		    {
+				“title” : “标题 ”;
+				“detail” : “内容”;
+				“time” : “发出时间 ”;
+				“tag” : “标签”;//活动id
+				“type” : “消息类型”;
+				“publisher” : “发布者”;    
+		    }
+	    ]
+
+	}</code></pre>
+			</div>
+			
+
+
+
+	</body>
+
+</html>

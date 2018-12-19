@@ -1,0 +1,21 @@
+	.my_table{
+		border-right:  #95b8e7  1px solid;
+		border-top:  #95b8e7  1px solid;
+		width: 100%;
+	}
+	.my_table tr td{
+		border-left:  #95b8e7  1px solid;
+		border-bottom:  #95b8e7  1px solid;
+	}
+	.my_table tr th{
+		background-color: #E0ECFF;
+		background:linear-gradient(to left,#95b8e7 0,#95b890 100%);
+		text-align: right;
+		line-height:30px;
+		border-left:  #95b8e7  1px solid;
+		border-bottom:  #95b8e7  1px solid;
+	}
+	.buttion_file{
+		width: 15px;
+		height:10px;
+	}

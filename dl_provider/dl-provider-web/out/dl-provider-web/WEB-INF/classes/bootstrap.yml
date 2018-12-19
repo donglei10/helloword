@@ -1,0 +1,24 @@
+#eureka-serviceIP: 192.168.1.102
+spring:
+ datasource:
+     username: root
+     password: root
+     url: jdbc:mysql://localhost:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+     driver-class-name: com.mysql.jdbc.Driver
+     initialSize: 5
+     minIdle: 5
+     maxActive: 20   
+     maxWait: 60000  
+     filters: stat
+     minEvictableIdleTimeMillis: 300000      # 配置一个连接在池中最小生存的时间，单位是毫秒
+     poolPreparedStatements: true
+ jpa:
+     database-platform: org.hibernate.dialect.MySQLDialect
+     show-sql: true
+     hibernate:
+          ddl-auto: update
+          naming: 
+               strategy: org.hibernate.cfg.ImprovedNamingStrategy
+     properties:
+          hibernate:
+               dialect: org.hibernate.dialect.MySQL5Dialect

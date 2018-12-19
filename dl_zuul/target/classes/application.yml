@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: gateway
+server:
+  port: 9380
+# zuul.routes.api-a.stripPrefix=false
+# routes to serviceId 这里边是通过serviceid来绑定地址，当在路径后添加/api-a/   则是访问service-A对应的服务。
+zuul:
+  routes:
+    api-a:
+      path: /apia/**
+      service-id: customer
+    api-b:
+      path: /apib/**
+      url: http://www.baidu.com
+    api-c:
+      path: /apic/**
+      url: http://localhost:9280/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9080/eureka

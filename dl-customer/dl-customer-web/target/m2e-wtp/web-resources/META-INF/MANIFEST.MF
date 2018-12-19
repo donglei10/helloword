@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: dl-customer-web
+Implementation-Version: 1.0
+Built-By: Administrator
+Implementation-Vendor-Id: com.dl.springcloud
+Build-Jdk: 1.8.0_11
+Implementation-URL: http://projects.spring.io/spring-boot/dl-customer/
+ dl-customer-web/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: com.dl.springcloud.ApplicationCustomer
+

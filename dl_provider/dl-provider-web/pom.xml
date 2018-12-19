@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>dl-provider-web</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+		
+	<parent>
+		<groupId>com.dl.springcloud</groupId>
+		<artifactId>dl-provider</artifactId>
+		<version>1.0</version>
+	</parent>
+	
+	<dependencies> 
+		 <dependency>
+		    <groupId>com.dl.springcloud</groupId>
+		    <artifactId>dl-provider-base-service</artifactId>
+		    <version>1.0</version>
+		</dependency>
+	</dependencies>
+
+		
+
+<!-- Spring Boot也提供了一个可选的 Maven Plugin来创建可执行的jars  -->
+	 <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+ <!--
+	<build>
+		<finalName>dl-provider_web</finalName>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<outputDirectory>src/webapp/WEB-INF/classes</outputDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration> 
+					 <webappDirectory>${basedir}/src/webapp</webappDirectory>
+					<warSourceDirectory>${basedir}/src/webapp</warSourceDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	 -->
+</project>
