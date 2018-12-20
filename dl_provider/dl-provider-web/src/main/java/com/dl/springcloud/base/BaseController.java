@@ -71,7 +71,7 @@ public abstract class BaseController<T> {
 		try {
 			Gson gson = new GsonBuilder().setDateFormat(this.datefomatSecond).create();
 			String gstr = gson.toJson(obj);
-			System.out.println("-------------->>12转换后的结果是："+gstr);
+			System.out.println("-------------->>123转换后的结果是："+gstr);
 			return gstr;
 		} catch (Exception e) {
 			e.printStackTrace();
