@@ -8,12 +8,12 @@
  <link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/signin/signin.css}"/>
 <body>
 	<div class="container">
-      <form class="form-signin">
+      <form class="form-signin" action="login" method="post">
         <h2 class="form-signin-heading">登陆</h2>
         <label for="inputEmail" class="sr-only">邮箱</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="账号" />
+        <input type="email" id="inputEmail" class="form-control" name="username" placeholder="账号" />
         <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="密码" />
+        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="密码" />
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"/> 记住密码
